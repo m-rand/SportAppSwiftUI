@@ -8,13 +8,18 @@
 import Foundation
 import ComposableArchitecture
 
-struct SportApp: ReducerProtocol {
+enum SportAppDestination: Equatable {
+  case profile(SportApp)
+}
+
+struct SportApp: ReducerProtocol, Equatable {
   struct State: Equatable {
     var user: User
     var news: NewsFeature.State
     var onlines: OnlinesFeature.State
     var sports: SportsFeature.State
 //    var saved: SavedFeature.State
+    var destination: SportAppDestination?
   }
 
   enum Action {

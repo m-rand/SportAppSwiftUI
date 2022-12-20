@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FavoritesView: View {
   let store: StoreOf<FavoritesFeature>
+  @State var showingProfile: Bool = false
 
   var body: some View {
     NavigationView {
@@ -37,7 +38,14 @@ struct FavoritesView: View {
             }
           }
         }
-      }.navigationTitle("Favorites")
+      }
+      .navigationTitle("SPORT.CZ")
+      .toolbar {
+        Button(action: { showingProfile.toggle() }) {
+          Image(systemName: "person.crop.circle")
+            .accessibilityLabel("User Profile")
+        }
+      }
     }
   }
 }

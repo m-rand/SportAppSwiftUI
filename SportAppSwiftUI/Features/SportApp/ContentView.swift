@@ -81,7 +81,7 @@ struct ContentView: View {
       SavedView(
         store: self.store.scope(
           state: { $0[keyPath: \.self] },
-          action: SportApp.Action.saved
+          action: { $0 }
         )
       ).tabItem {
         if selection == 4 {

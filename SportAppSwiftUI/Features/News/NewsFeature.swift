@@ -22,7 +22,8 @@ struct NewsFeature: ReducerProtocol {
       switch action {
       default: return .none
       }
-    }.forEach(\.articles, action: /Action.article(id:action:)) {
+    }
+    .forEach(\.articles, action: /Action.article(id:action:)) {
       ArticleFeature()
     }
   }

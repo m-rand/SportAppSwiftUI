@@ -10,15 +10,26 @@ import SwiftUI
 
 struct NewsView: View {
   let store: StoreOf<NewsFeature>
+  @State var showingProfile: Bool = false
 
   var body: some View {
     NavigationView {
       List {
         ForEachStore(store.scope(state: \.articles, action: NewsFeature.Action.article(id:action:))
         ) {
-          ArticleView(store: $0)
+          ArticleRowView(store: $0)
         }
-      }.navigationTitle("News")
+      }
+      .navigationTitle("Zprávy")
+      .toolbar {
+        Button(action: { showingProfile.toggle() }) {
+          Image(systemName: "person.crop.circle")
+            .accessibilityLabel("User Profile")
+        }
+      }
+      .sheet(isPresented: $showingProfile) {
+//        ProfileView(store: )
+      }
     }
   }
 }

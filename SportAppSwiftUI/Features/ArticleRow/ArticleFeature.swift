@@ -20,10 +20,6 @@ struct ArticleFeature: ReducerProtocol {
   func reduce(into state: inout Article, action: Action) -> EffectTask<Action> {
     switch action {
     case .likeToggle:
-//      state.liked.toggle()
-//      state.likes += state.liked ? 1 : -1
-//      return .none
-
       return .task { [count = state.likes, liked = state.liked] in
         await .likeResponse(TaskResult { try await self.likeClient.like(liked, count) })
       }

@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct ArticleView: View {
+struct ArticleRowView: View {
   let store: StoreOf<ArticleFeature>
 
   var body: some View {
@@ -49,6 +49,6 @@ struct ArticleView: View {
 
 struct ArticleView_Previews: PreviewProvider {
   static var previews: some View {
-    ArticleView(store: Store(initialState: NewsFeature.State.mock.articles.first!, reducer: ArticleFeature()))
+    ArticleRowView(store: Store(initialState: NewsFeature.State.mock.articles.first!, reducer: ArticleFeature()))
   }
 }
