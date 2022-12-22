@@ -5,11 +5,12 @@
 //  Created by Marcel Balas on 02.11.2022.
 //
 
+import _SwiftUINavigationState
 import ComposableArchitecture
 import SwiftUI
 
 struct SavedView: View {
-  let store: StoreOf<SportApp>
+  let store: StoreOf<SavedFeature>
   @State var showingProfile: Bool = false
 
   var body: some View {
@@ -18,7 +19,7 @@ struct SavedView: View {
         Section("Onlines") {
           ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-              let onlineStore = store.scope(state: \.onlines, action: SportApp.Action.onlines)
+              let onlineStore = store.scope(state: \.onlines, action: SavedFeature.Action.onlines)
 
               ForEachStore(
                 onlineStore.scope(
@@ -33,7 +34,7 @@ struct SavedView: View {
         }
 
         Section("News") {
-          let articlesStore = store.scope(state: \.news, action: SportApp.Action.news)
+          let articlesStore = store.scope(state: \.news, action: SavedFeature.Action.news)
           ForEachStore(
             articlesStore.scope(
               state: \.articles,
@@ -46,13 +47,15 @@ struct SavedView: View {
       }
       .navigationTitle("Saved")
       .toolbar {
-        Button(action: { showingProfile.toggle() }) {
+        Button(action: {
+          showingProfile.toggle()
+        }) {
           Image(systemName: "person.crop.circle")
             .accessibilityLabel("User Profile")
         }
       }
       .sheet(isPresented: $showingProfile) {
-        ProfileView(store: store)
+        ProfileView(store: store.scope(state: { $0[keyPath: \.self] }, action: SavedFeature.Action.profile))
       }
     }
   }
@@ -60,7 +63,7 @@ struct SavedView: View {
 
 struct SavedView_Previews: PreviewProvider {
   static var previews: some View {
-    SavedView(store: Store(initialState: .mock, reducer: SportApp()))
+    SavedView(store: Store(initialState: .mock, reducer: SavedFeature()))
   }
 }
 

@@ -19,7 +19,6 @@ struct SportApp: ReducerProtocol, Equatable {
     var onlines: OnlinesFeature.State
     var sports: SportsFeature.State
 //    var saved: SavedFeature.State
-    var destination: SportAppDestination?
   }
 
   enum Action {
@@ -28,9 +27,19 @@ struct SportApp: ReducerProtocol, Equatable {
     case favorites(FavoritesFeature.Action)
     case sports(SportsFeature.Action)
     case saved(SavedFeature.Action)
+
+    case showProfile
+    case dismissProfile
   }
 
   var body: some ReducerProtocol<State, Action> {
+    Reduce { state, action in
+      switch action {
+      default:
+        return .none
+      }
+    }
+
     Scope(state: \.news, action: /Action.news) {
       NewsFeature()
     }

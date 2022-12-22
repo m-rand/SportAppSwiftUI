@@ -20,13 +20,9 @@ struct ContentView: View {
           action: SportApp.Action.news
         )
       ).tabItem {
+        TabImage(imageName: "NewsLight")
         if selection == 0 {
-          Image("NewsLight")
-            .renderingMode(.template)
-            .tint(.accentColor)
           Text("News")
-        } else {
-          Image("NewsLight")
         }
       }.tag(0)
 
@@ -36,13 +32,9 @@ struct ContentView: View {
           action: SportApp.Action.onlines
         )
       ).tabItem {
+        TabImage(imageName: "OnlineLight")
         if selection == 1 {
-          Image("OnlineLight")
-            .renderingMode(.template)
-            .tint(.accentColor)
           Text("Onlines")
-        } else {
-          Image("OnlineLight")
         }
       }.tag(1)
 
@@ -52,13 +44,9 @@ struct ContentView: View {
           action: SportApp.Action.favorites
         )
       ).tabItem {
+        TabImage(imageName: "FavoritesLight")
         if selection == 2 {
-          Image("FavoritesLight")
-            .renderingMode(.template)
-            .tint(.accentColor)
           Text("Favorites")
-        } else {
-          Image("FavoritesLight")
         }
       }.tag(2)
 
@@ -68,32 +56,35 @@ struct ContentView: View {
           action: SportApp.Action.sports
         )
       ).tabItem {
+        TabImage(imageName: "SportsLight")
         if selection == 3 {
-          Image("SportsLight")
-            .renderingMode(.template)
-            .tint(.accentColor)
           Text("Sports")
-        } else {
-          Image("SportsLight")
         }
       }.tag(3)
 
       SavedView(
         store: self.store.scope(
           state: { $0[keyPath: \.self] },
-          action: { $0 }
+//          action: { $0 }
+          action: SportApp.Action.saved
         )
       ).tabItem {
+        TabImage(imageName: "SavedLight")
         if selection == 4 {
-          Image("SavedLight")
-            .renderingMode(.template)
-            .tint(.accentColor)
           Text("Saved")
-        } else {
-          Image("SavedLight")
         }
       }.tag(4)
     }
+  }
+}
+
+struct TabImage: View {
+  let imageName: String
+
+  var body: some View {
+    Image(imageName)
+      .renderingMode(.template)
+      .tint(.accentColor)
   }
 }
 

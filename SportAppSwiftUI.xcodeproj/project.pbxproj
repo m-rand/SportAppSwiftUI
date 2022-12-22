@@ -38,6 +38,11 @@
 		B85FCE5E2915447800AF14E5 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FCE5D2915447800AF14E5 /* ArticleRowView.swift */; };
 		B85FCE6129154A5D00AF14E5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FCE6029154A5D00AF14E5 /* GameView.swift */; };
 		B85FCE6329154A6800AF14E5 /* GameFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FCE6229154A6800AF14E5 /* GameFeature.swift */; };
+		B8852D5229546BD700A42BAF /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8852D5129546BD700A42BAF /* Screen.swift */; };
+		B8852D5529546C4500A42BAF /* TCACoordinators in Frameworks */ = {isa = PBXBuildFile; productRef = B8852D5429546C4500A42BAF /* TCACoordinators */; };
+		B8852D5729547A0A00A42BAF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8852D5629547A0A00A42BAF /* Coordinator.swift */; };
+		B8852D5929548F4600A42BAF /* FollowingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8852D5829548F4600A42BAF /* FollowingFeature.swift */; };
+		B8852D5B2954AADB00A42BAF /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8852D5A2954AADB00A42BAF /* MainTabCoordinator.swift */; };
 		B8A18FA7292F9AEC009F7062 /* FavoritingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A18FA6292F9AEC009F7062 /* FavoritingFeature.swift */; };
 		B8A18FA9292F9B66009F7062 /* FavoriteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A18FA8292F9B66009F7062 /* FavoriteClient.swift */; };
 		B8A18FAB292F9BBD009F7062 /* FavoritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A18FAA292F9BBD009F7062 /* FavoritingView.swift */; };
@@ -78,6 +83,10 @@
 		B85FCE5D2915447800AF14E5 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		B85FCE6029154A5D00AF14E5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B85FCE6229154A6800AF14E5 /* GameFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeature.swift; sourceTree = "<group>"; };
+		B8852D5129546BD700A42BAF /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		B8852D5629547A0A00A42BAF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B8852D5829548F4600A42BAF /* FollowingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingFeature.swift; sourceTree = "<group>"; };
+		B8852D5A2954AADB00A42BAF /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		B8A18FA6292F9AEC009F7062 /* FavoritingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritingFeature.swift; sourceTree = "<group>"; };
 		B8A18FA8292F9B66009F7062 /* FavoriteClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteClient.swift; sourceTree = "<group>"; };
 		B8A18FAA292F9BBD009F7062 /* FavoritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritingView.swift; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8095622291291C800E63295 /* ComposableArchitecture in Frameworks */,
+				B8852D5529546C4500A42BAF /* TCACoordinators in Frameworks */,
 				B8095624291291C800E63295 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,8 +132,8 @@
 		B80956112912917F00E63295 /* SportAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				B8E253672916A5E40094318C /* LikeClient.swift */,
-				B8A18FA8292F9B66009F7062 /* FavoriteClient.swift */,
+				B8852D5029546BC900A42BAF /* Navigation */,
+				B8852D4F29546BB500A42BAF /* Clients */,
 				B809562A2912930100E63295 /* Features */,
 				B80956292912925E00E63295 /* Resources */,
 				B80956122912917F00E63295 /* SportAppSwiftUIApp.swift */,
@@ -281,6 +291,25 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		B8852D4F29546BB500A42BAF /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				B8E253672916A5E40094318C /* LikeClient.swift */,
+				B8A18FA8292F9B66009F7062 /* FavoriteClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		B8852D5029546BC900A42BAF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B8852D5129546BD700A42BAF /* Screen.swift */,
+				B8852D5629547A0A00A42BAF /* Coordinator.swift */,
+				B8852D5A2954AADB00A42BAF /* MainTabCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		B8A18FA5292F9ACB009F7062 /* Favoriting */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				B8DB10AE294B80ED00B072C9 /* FollowingView.swift */,
+				B8852D5829548F4600A42BAF /* FollowingFeature.swift */,
 			);
 			path = Following;
 			sourceTree = "<group>";
@@ -317,6 +347,7 @@
 			packageProductDependencies = (
 				B8095621291291C800E63295 /* ComposableArchitecture */,
 				B8095623291291C800E63295 /* Dependencies */,
+				B8852D5429546C4500A42BAF /* TCACoordinators */,
 			);
 			productName = SportAppSwiftUI;
 			productReference = B809560F2912917F00E63295 /* SportAppSwiftUI.app */;
@@ -349,6 +380,7 @@
 			packageReferences = (
 				B8095620291291C800E63295 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				B8DB10B0294B82A700B072C9 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+				B8852D5329546C4500A42BAF /* XCRemoteSwiftPackageReference "TCACoordinators" */,
 			);
 			productRefGroup = B80956102912917F00E63295 /* Products */;
 			projectDirPath = "";
@@ -376,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8852D5229546BD700A42BAF /* Screen.swift in Sources */,
 				B85FCE5229142B5900AF14E5 /* OnlinesView.swift in Sources */,
 				B847A06329190F5100512EF5 /* SportsMock.swift in Sources */,
 				B85FCE5429142BEF00AF14E5 /* SportEventView.swift in Sources */,
@@ -383,6 +416,7 @@
 				B8A18FA7292F9AEC009F7062 /* FavoritingFeature.swift in Sources */,
 				B80956452912B47F00E63295 /* SavedFeature.swift in Sources */,
 				B85FCE502914283800AF14E5 /* OnlinesFeature.swift in Sources */,
+				B8852D5729547A0A00A42BAF /* Coordinator.swift in Sources */,
 				B809563A2912A88600E63295 /* NewsFeature.swift in Sources */,
 				B80956152912917F00E63295 /* ContentView.swift in Sources */,
 				B80956382912A51200E63295 /* SportsView.swift in Sources */,
@@ -401,9 +435,11 @@
 				B80956402912B42700E63295 /* SportsFeature.swift in Sources */,
 				B847A06529190F7B00512EF5 /* NewsMock.swift in Sources */,
 				B8A18FAB292F9BBD009F7062 /* FavoritingView.swift in Sources */,
+				B8852D5929548F4600A42BAF /* FollowingFeature.swift in Sources */,
 				B8E253682916A5E40094318C /* LikeClient.swift in Sources */,
 				B85FCE5629150C4C00AF14E5 /* LeagueFeature.swift in Sources */,
 				B847A06129190F2A00512EF5 /* OnlinesMock.swift in Sources */,
+				B8852D5B2954AADB00A42BAF /* MainTabCoordinator.swift in Sources */,
 				B80956322912A4EF00E63295 /* NewsView.swift in Sources */,
 				B85FCE6129154A5D00AF14E5 /* GameView.swift in Sources */,
 				B847A05F291902B800512EF5 /* TeamView.swift in Sources */,
@@ -622,6 +658,14 @@
 				minimumVersion = 0.9.0;
 			};
 		};
+		B8852D5329546C4500A42BAF /* XCRemoteSwiftPackageReference "TCACoordinators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/TCACoordinators/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		B8DB10B0294B82A700B072C9 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
@@ -642,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8095620291291C800E63295 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = Dependencies;
+		};
+		B8852D5429546C4500A42BAF /* TCACoordinators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8852D5329546C4500A42BAF /* XCRemoteSwiftPackageReference "TCACoordinators" */;
+			productName = TCACoordinators;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

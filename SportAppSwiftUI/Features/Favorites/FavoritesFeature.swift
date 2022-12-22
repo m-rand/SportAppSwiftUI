@@ -16,11 +16,8 @@ struct FavoritesFeature: ReducerProtocol {
   }
 
   var body: some ReducerProtocol<SportsFeature.State, Action> {
-    Reduce { state, action in
-      switch action {
-      default: return .none
-      }
-    }.forEach(\.leagues, action: /Action.league(id:action:)) {
+    EmptyReducer()
+    .forEach(\.leagues, action: /Action.league(id:action:)) {
       LeagueFeature()
     }
     .forEach(\.teams, action: /Action.team(id:action:)) {

@@ -51,7 +51,7 @@ struct Favoriting<ID: Hashable & Sendable>: ReducerProtocol {
       return .none
 
     case let .response(.success(isFavorite)):
-      state.isFavorite = isFavorite
+      state.isFavorite = isFavorite // just for reverting if it failed
       return .none
     }
   }

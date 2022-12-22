@@ -12,6 +12,11 @@ struct NewsView: View {
   let store: StoreOf<NewsFeature>
   @State var showingProfile: Bool = false
 
+  init(store: StoreOf<NewsFeature>, showingProfile: Bool = false) {
+    self.store = store
+    self.showingProfile = showingProfile
+  }
+
   var body: some View {
     NavigationView {
       List {

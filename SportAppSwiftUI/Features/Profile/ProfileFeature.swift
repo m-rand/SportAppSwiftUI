@@ -15,11 +15,6 @@ struct ProfileFeature: ReducerProtocol {
   }
 
   var body: some ReducerProtocol<SportApp.State, Action> {
-    Reduce { state, action in
-      switch action {
-      default: return .none
-      }
-    }
     Scope(state: \.sports, action: /Action.favorites) {
       FavoritesFeature()
     }

@@ -9,7 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct ProfileView: View {
-  let store: StoreOf<SportApp>
+  let store: StoreOf<ProfileFeature>
   
   var body: some View {
     NavigationView {
@@ -36,7 +36,7 @@ struct ProfileView: View {
             destination: FollowingView(
               store: self.store.scope(
                 state: \.sports,
-                action: SportApp.Action.favorites
+                action: ProfileFeature.Action.favorites
               )
             )
           )
@@ -69,6 +69,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
   static var previews: some View {
-    ProfileView(store: Store(initialState: .mock, reducer: SportApp()))
+    ProfileView(store: Store(initialState: .mock, reducer: ProfileFeature()))
   }
 }
