@@ -21,7 +21,7 @@ struct SavedFeature: ReducerProtocol {
     case profile(ProfileFeature.Action)
   }
 
-  var body: some ReducerProtocol<SportApp.State, Action> {
+  var body: some ReducerProtocol<SportAppModel, Action> {
     Reduce { state, action in
       switch action {
       case .profileTapped:

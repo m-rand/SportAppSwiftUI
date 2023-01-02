@@ -9,15 +9,12 @@ import ComposableArchitecture
 import Foundation
 
 struct NewsFeature: ReducerProtocol {
-  struct State: Equatable {
-    var articles: IdentifiedArrayOf<Article>
-  }
 
   enum Action {
     case article(id: Article.ID, action: ArticleFeature.Action)
   }
 
-  var body: some ReducerProtocol<State, Action> {
+  var body: some ReducerProtocol<News, Action> {
     Reduce { state, action in
       switch action {
       default: return .none

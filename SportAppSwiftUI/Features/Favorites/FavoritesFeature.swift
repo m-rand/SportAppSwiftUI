@@ -15,7 +15,7 @@ struct FavoritesFeature: ReducerProtocol {
     case team(id: TeamFeature.State.ID, action: TeamFeature.Action)
   }
 
-  var body: some ReducerProtocol<SportsFeature.State, Action> {
+  var body: some ReducerProtocol<Sports, Action> {
     EmptyReducer()
     .forEach(\.leagues, action: /Action.league(id:action:)) {
       LeagueFeature()
@@ -26,7 +26,7 @@ struct FavoritesFeature: ReducerProtocol {
   }
 }
 
-extension SportsFeature.State {
+extension Sports {
   var favoriteTeams: SportTeams {
     teams.filter(\.isFavorite)
   }

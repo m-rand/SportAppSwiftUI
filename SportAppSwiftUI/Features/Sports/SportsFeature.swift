@@ -9,12 +9,6 @@ import ComposableArchitecture
 import Foundation
 
 struct SportsFeature: ReducerProtocol {
-  struct State: Equatable {
-    var teams: IdentifiedArrayOf<SportTeamInfo>
-    var leagues: IdentifiedArrayOf<SportLeagueInfo>
-    var athletes: IdentifiedArrayOf<Athlete>
-    var games: IdentifiedArrayOf<SportInfo>
-  }
 
   enum Action {
     case league(id: LeagueFeature.State.ID, action: LeagueFeature.Action)
@@ -22,7 +16,7 @@ struct SportsFeature: ReducerProtocol {
     case team(id: TeamFeature.State.ID, action: TeamFeature.Action)
   }
 
-  var body: some ReducerProtocol<State, Action> {
+  var body: some ReducerProtocol<Sports, Action> {
     Reduce { state, action in
       switch action {
       default: return .none

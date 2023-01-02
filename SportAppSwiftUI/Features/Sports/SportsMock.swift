@@ -14,8 +14,8 @@ typealias SportTeams = IdentifiedArrayOf<SportTeamInfo>
 typealias SportAthletes = IdentifiedArrayOf<Athlete>
 typealias SportGames = IdentifiedArrayOf<SportInfo>
 
-extension SportsFeature.State {
-  static let mock = SportsFeature.State(
+extension Sports {
+  static let mock = Sports(
     teams: .mock,
     leagues: .mock,
     athletes: .mock,

@@ -12,13 +12,13 @@ import TCACoordinators
 
 struct Screen: ReducerProtocol {
   enum State: Equatable {
-    case profile(SportApp.State)
-    case news(NewsFeature.State)
-    case onlines(OnlinesFeature.State)
-    case favorites(SportsFeature.State)
-    case sports(SportsFeature.State)
-    case saved(SportApp.State)
-    case following(FavoritesFeature.State)
+    case profile(SportAppModel)
+    case news(News)
+    case onlines(Onlines)
+    case favorites(Sports)
+    case sports(Sports)
+    case saved(SportAppModel)
+    case following(Sports)
   }
 
   enum Action {

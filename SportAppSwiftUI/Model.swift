@@ -5,9 +5,39 @@
 //  Created by Marcel Balas on 01.11.2022.
 //
 
+import IdentifiedCollections
 import Foundation
 import UIKit
 
+struct SportAppModel: Equatable {
+  var user: User
+  var news: News
+  var onlines: Onlines
+  var sports: Sports
+}
+
+struct News: Equatable {
+  var articles: IdentifiedArrayOf<Article>
+}
+
+struct Onlines: Equatable {
+  var events: IdentifiedArrayOf<SportEventFeature.State>
+
+  var todayEvents: IdentifiedArrayOf<SportEventFeature.State> {
+    events.filter { Calendar.current.isDateInToday($0.date) }
+  }
+
+  var tomorrowEvents: IdentifiedArrayOf<SportEventFeature.State> {
+    events.filter { Calendar.current.isDateInTomorrow($0.date) }
+  }
+}
+
+struct Sports: Equatable {
+  var teams: IdentifiedArrayOf<SportTeamInfo>
+  var leagues: IdentifiedArrayOf<SportLeagueInfo>
+  var athletes: IdentifiedArrayOf<Athlete>
+  var games: IdentifiedArrayOf<SportInfo>
+}
 
 // MARK: - User profile
 struct User: Equatable {

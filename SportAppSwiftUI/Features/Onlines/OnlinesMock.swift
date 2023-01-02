@@ -8,7 +8,7 @@
 import IdentifiedCollections
 import Foundation
 
-extension OnlinesFeature.State {
+extension Onlines {
   static let mock = OnlinesFeature.State(events: IdentifiedArrayOf<SportEvent>(uniqueElements: [
     SportEvent(
       id: 1,

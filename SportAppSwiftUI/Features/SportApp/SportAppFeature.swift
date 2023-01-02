@@ -13,13 +13,13 @@ enum SportAppDestination: Equatable {
 }
 
 struct SportApp: ReducerProtocol, Equatable {
-  struct State: Equatable {
-    var user: User
-    var news: NewsFeature.State
-    var onlines: OnlinesFeature.State
-    var sports: SportsFeature.State
-//    var saved: SavedFeature.State
-  }
+//  struct State: Equatable {
+//    var user: User
+//    var news: NewsFeature.State
+//    var onlines: OnlinesFeature.State
+//    var sports: SportsFeature.State
+////    var saved: SavedFeature.State
+//  }
 
   enum Action {
     case news(NewsFeature.Action)
@@ -32,7 +32,7 @@ struct SportApp: ReducerProtocol, Equatable {
     case dismissProfile
   }
 
-  var body: some ReducerProtocol<State, Action> {
+  var body: some ReducerProtocol<SportAppModel, Action> {
     Reduce { state, action in
       switch action {
       default:
@@ -58,8 +58,8 @@ struct SportApp: ReducerProtocol, Equatable {
   }
 }
 
-extension SportApp.State {
-  static let mock = SportApp.State(
+extension SportAppModel {
+  static let mock = SportAppModel(
     user: User(
       userId: 1,
       name: "John Doe",

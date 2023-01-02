@@ -8,7 +8,7 @@
 import IdentifiedCollections
 import Foundation
 
-extension NewsFeature.State {
+extension News {
   static let mock = NewsFeature.State(articles: IdentifiedArrayOf(uniqueElements: [
     Article(
       id: 1,
